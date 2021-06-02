@@ -23,6 +23,8 @@ model = LinearRegression()
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.6)
 train_errors, val_errors = [], []
 
+print("Optimizing model... ")
+print("Number of times the model will be trained:", len(x_train))
 for m in range(1, len(x_train)):
     model.fit(x_train[:m],y_train[:m])
     y_train_predict = model.predict(x_train[:m])
